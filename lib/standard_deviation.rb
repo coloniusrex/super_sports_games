@@ -10,6 +10,9 @@ total_of_squared_array = 0.00
 mean_of_squared_array = 0.00
 answer = 0.00
 
+
+
+
 # FIND THE AVERAGE OF AGES
   ages.each do |number|
     total_age += number
