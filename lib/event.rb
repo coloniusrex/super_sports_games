@@ -1,12 +1,12 @@
 require './lib/standard_deviation'
 
 class Event
-  attr_reader :name
+  attr_reader :name, :ages
   def initialize(event_name, attendant_ages)
     @name = event_name
     @ages = attendant_ages
-    @total_age = 0.00
-    @mean_age = 0.00
+    @total_age = 0
+
   end
 
   def max_age
@@ -19,7 +19,7 @@ class Event
 
   def average_age
     @ages.each do |number|
-      @total_age += number
+      @total_age += number.to_f.round(2)
     end
     return @total_age / @ages.count
   end
