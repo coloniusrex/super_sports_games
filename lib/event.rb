@@ -7,24 +7,14 @@ class Event
     @ages = attendant_ages
     @total_age = 0.00
     @mean_age = 0.00
-    @to_be_squared = 0.00
-    @squared_result = 0.00
-    @squared_array = []
-    @total_of_squared_array = 0.00
-    @mean_of_squared_array = 0.00
-    @std_dev_answer = 0.00
-
-
   end
 
   def max_age
-    @ages.sort
-    return @ages.last
+    return @ages.sort.last
   end
 
   def min_age
-    @ages.sort
-    return @ages.first
+    return @ages.sort.first
   end
 
   def average_age
@@ -35,6 +25,15 @@ class Event
   end
 
   def standard_deviation_age
-
+    average = @ages.sum.to_f / @ages.count.to_f
+    modified_average = 0.00
+    squared_number = 0.00
+    modified_array = []
+      @ages.each do |number|
+        squared_number = number - average
+        modified_array << (squared_number * squared_number)
+      end
+      modified_average = Math.sqrt(modified_array.sum / modified_array.count)
+      return modified_average.round(2)
   end
 end
