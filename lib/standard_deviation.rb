@@ -1,5 +1,3 @@
-ages = [24, 30, 18, 20, 41]
-
 average = ages.sum.to_f / ages.count.to_f
 modified_average = 0.00
 squared_number = 0.00
@@ -8,9 +6,8 @@ modified_array = []
     squared_number = number - average
     modified_array << (squared_number * squared_number)
   end
-  modified_average = Math.sqrt(modified_array.sum / modified_array.count)
-  puts modified_average.round(2)
-
+modified_average = Math.sqrt(modified_array.sum / modified_array.count)
+puts modified_average.round(2)
 
 # total_age = 0.00
 # mean_age = 0.00
