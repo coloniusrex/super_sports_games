@@ -5,21 +5,25 @@ require './lib/event'
 
 class GamesTest < Minitest::Test
   def test_it_exists
+
     games = Games.new(2017)
     assert_instance_of Games, games
   end
 
   def test_it_has_a_year
+
     games = Games.new(2017)
     assert_equal 2017, games.year
   end
 
   def test_events_starts_empty
+
     games = Games.new(2017)
     assert_equal [], games.events
   end
 
   def test_it_can_add_events
+
     curling = Event.new("Curling", [24, 30, 18, 20, 41])
     ring_toss = Event.new("Ring Toss", [23, 22, 29, 18, 30])
     games = Games.new(2017)
@@ -29,6 +33,7 @@ class GamesTest < Minitest::Test
   end
 
   def test_it_can_create_headers
+
     games = Games.new(2017)
     expected = "Event          Max Age             Min Age             Average Age         StdDev Age"
     assert_equal expected, games.headers
@@ -42,6 +47,7 @@ class GamesTest < Minitest::Test
   end
 
   def test_it_can_create_a_summary_for_all_events
+
     curling = Event.new("Curling", [24, 30, 18, 20, 41])
     ring_toss = Event.new("Ring Toss", [23, 22, 29, 18, 30])
     games = Games.new(2017)
@@ -53,6 +59,7 @@ class GamesTest < Minitest::Test
   end
 
   def test_it_can_create_a_summary_for_the_games
+
     curling = Event.new("Curling", [24, 30, 18, 20, 41])
     ring_toss = Event.new("Ring Toss", [23, 22, 29, 18, 30])
     games = Games.new(2017)
