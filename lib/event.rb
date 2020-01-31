@@ -1,5 +1,3 @@
-require './lib/standard_deviation'
-
 class Event
   attr_reader :name, :ages
   def initialize(event_name, attendant_ages)
